@@ -4,6 +4,7 @@
   "buffer_before": 30,
   "buffer_after": 40,
   "top_n_clips": 5,
+  "subtitle_delay": 0.5,
   "signal_weights": {
     "chat": 0.25,
     "csv": 0.15,

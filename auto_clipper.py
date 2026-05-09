@@ -12,6 +12,7 @@ from core.constants import (
     DEFAULT_BUFFER_BEFORE,
     DEFAULT_BUFFER_AFTER,
     DEFAULT_TOP_N_CLIPS,
+    DEFAULT_SUBTITLE_DELAY,
     SIGNAL_WEIGHTS,
     DEFAULT_KEYWORD_WEIGHTS
 )
@@ -96,6 +97,7 @@ def main():
     buffer_after = config.get("buffer_after", DEFAULT_BUFFER_AFTER)
     signal_weights = config.get("signal_weights", SIGNAL_WEIGHTS)
     keyword_weights = config.get("keyword_weights", DEFAULT_KEYWORD_WEIGHTS)
+    subtitle_delay = args.subtitle_delay if args.subtitle_delay != DEFAULT_SUBTITLE_DELAY else config.get("subtitle_delay", DEFAULT_SUBTITLE_DELAY)
 
     # Step 1: 解析とスコアリング
     df_scores = analyze_and_score(
@@ -134,7 +136,7 @@ def main():
 
     # Step 4: Whisperによる文字起こし (オプション)
     if args.transcribe and clip_paths:
-        transcribe_clips(clip_paths, output_dir, model_name=args.whisper_model, subtitle_delay=args.subtitle_delay)
+        transcribe_clips(clip_paths, output_dir, model_name=args.whisper_model, subtitle_delay=subtitle_delay)
         
     # Step 5: ショート動画化 (オプション)
     if args.shorts and clip_paths:
