@@ -1,0 +1,25 @@
+{
+  "window_sec": 60,
+  "moving_average_window": 2,
+  "buffer_before": 30,
+  "buffer_after": 40,
+  "top_n_clips": 5,
+  "signal_weights": {
+    "chat": 0.25,
+    "csv": 0.15,
+    "retention": 0.35,
+    "audio": 0.20,
+    "superchat": 0.0,
+    "chat_accel": 0.30
+  },
+  "keyword_weights": {
+    "草": 2,
+    "w": 1,
+    "かわいい": 3,
+    "！？": 2,
+    "助かる": 2,
+    "てぇてぇ": 3,
+    "神": 3,
+    "あ": 1
+  }
+}

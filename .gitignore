@@ -1,0 +1,42 @@
+# Media files (動画・音声)
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.mov
+*.wav
+*.mp3
+*.raw
+
+# Configs & Credentials (設定・秘密情報)
+.env
+chat_cache.json
+ai_score_cache.json
+
+# Temporary data & analytics files (一時データ・分析データ)
+*.csv
+*.live_chat.json
+temp_*.json
+
+# Output directories
+output/
+out/
+
+# Python environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
