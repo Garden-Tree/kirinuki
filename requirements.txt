@@ -1,0 +1,8 @@
+pandas
+numpy
+scipy
+ffmpeg-python
+yt-dlp
+google-genai
+python-dotenv
+openai-whisper

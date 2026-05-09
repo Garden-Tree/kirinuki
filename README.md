@@ -33,12 +33,18 @@ python auto_clipper.py --video "archive.mp4" --url "https://www.youtube.com/watc
 
 - `--video` **(必須)**: 入力動画ファイルのパス（例: `video.mp4`）
 - `--url` **(必須)**: 対象配信のYouTube URL
-- `--csv`: YouTube Analytics等からダウンロードした `liveViewership.csv` のパス（任意）
+- `--csv`: `liveViewership.csv` のパス（指定しない場合は同フォルダから自動検出）
+- `--engagements-csv`: `liveEngagements.csv` のパス（指定しない場合は同フォルダから自動検出）
 - `--output`: 切り抜き動画の保存先ディレクトリ（デフォルト: `output`）
 - `--top_n`: 出力する切り抜き動画の数（`config.json`での指定より優先されます）
 - `--config`: 設定ファイルのパス（デフォルト: `config.json`）
-- `--use-ai`: Gemini APIを利用してチャットの文脈から高度なスコアリングを行います
+- `--no-ai`: AIを利用したチャットの高度なスコアリングを無効にします（現在はデフォルトでONになっています）
 - `--api-key`: Gemini APIキー（コマンドライン引数、環境変数、または `.env` ファイルにて指定可能）
+- `--transcribe`: 出力されたハイライト動画に対し、Whisperを用いて文字起こし（字幕 `.srt` およびテキスト `.txt`）を自動生成します
+- `--whisper-model`: Whisperのモデルサイズを指定します（例: `tiny`, `base`, `small`, `medium`, `large`, `turbo`）。デフォルトは最新の高精度かつ高速な `turbo` です
+- `--subtitle-delay`: 字幕の表示タイミングを遅らせる秒数を指定します（デフォルト: `1.0`）。抽出された動画の音声ズレを補正するために使用します
+- `--shorts`: 抽出した動画をYouTube Shorts等の縦型（1080x1920・黒背景）に変換し、文字起こしが有効な場合は字幕もハードサブとして焼き付けます
+- `--top-image`: `--shorts` 実行時に、画面上部の黒帯部分に配置する静止画（PNGやJPG）のパスを指定します
 
 ## 設定ファイルとAPIキーについて
 
